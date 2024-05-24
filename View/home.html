@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="assets/css/general.css">
+  <link rel="stylesheet" href="assets/css/media_query_600.css">
+  <link rel="stylesheet" href="assets/css/media_query_900.css">
+  <link rel="stylesheet" href="assets/css/mobile.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- kani nga panel kay naa diri ang button para navigate to food, drinks, ect..  -->
+    <nav>
+
+      <button>FOOD</button>
+      <button>DRINKS</button>
+      <button>DESSERT</button>
+      <button>SNACKS</button>
+
+    </nav>
+  
+    <!-- mao ni ang panel nga naay menu items -->
+    <main>
+
+      <div class="itemMenu">
+
+        <div class="imgContainer">
+          <img src="assets/img/spag.jpg" alt="MYSELF" class="fitCover">
+        </div>
+
+        <div class="orderContainer">
+
+          <div class="quantityPanel">
+            <button>-</button>
+            <div class="amount">0</div>
+            <button>+</button>
+          </div>
+  
+          <button class="placeOrder">Add</button>
+
+        </div>
+
+      </div>
+
+     
+      <!-- if mag add og lain nga item sa menu, copy lang ang div nga naay class 
+      nga itemMenu
+      pwede ra gamitan og JavaScript sa pag add.
+      apila nalang sad ang mga class para naa na design daan-->
+
+    </main>
+  
+    <!-- ari nga panel makita ang gi order nimo og ang total -->
+    <aside>
+      
+      <!-- pwede diri ma cancel ang order  -->
+      <div class="orderPanel">
+
+        <div class="orderList">order</div>
+        <div class="orderList">order</div>
+        <div class="orderList">order</div>
+
+      </div>
+
+      <div class="totalPanel">
+
+        <div class="total">
+          total
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+  
+</body>
+</html>
