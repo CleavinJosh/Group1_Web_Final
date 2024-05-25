@@ -34,14 +34,26 @@ main{
   justify-content: space-around;
   gap: 20px;
   padding: 20px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .itemMenu{
+  position: relative;
   background-color: aquamarine;
   border: 2px solid black;
   width: 250px;
   height: 350px;
+}
+
+.item-name {
+  background-color: white;
+  padding-inline: 10px;
+  text-align: center;
+
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  right: 0;
 }
 
 .imgContainer{
@@ -86,6 +98,7 @@ aside{
   display: grid;
   grid-template-rows: 5fr 1fr;
   gap: 10px;
+
 }
 
 aside > div.orderPanel{
@@ -94,25 +107,54 @@ aside > div.orderPanel{
   flex-direction: column;
   gap: 10px;
   padding: 10px;
+
+  position: relative;
+  
 }
 
 .orderList{
   background-color: azure;
   height: 50px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
 
 aside > div.totalPanel{
   background-color: burlywood;
   padding: 20px;
+
 }
 
 aside > div.totalPanel > div.total{
   background-color: aquamarine;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+}
+
+#check_out_button {
+  padding: 5px;
+}
+
+.order_action {
+  position: absolute;
+
+  right: 10px;
+}
+
+.order_action button {
+
+  background-color: #dc3545;
+  color: #ffffff;
+
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius: 8px;
 }
