@@ -1,0 +1,36 @@
+%PDF-1.3
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << >> >>
+endobj
+4 0 obj
+<< /Length 460 >>
+stream
+BT /F1 24 Tf 100 750 Td (Receipt) Tj ET
+BT /F1 12 Tf 100 700 Td (2 x spaghetti - Total: P 100.00) Tj ET
+BT /F1 14 Tf 100 630 Td (Grand Total: P 100.00) Tj ET
+BT /F1 14 Tf 100 610 Td (Customer Payment: P 200.00) Tj ET
+BT /F1 14 Tf 100 590 Td (Change: P 100.00) Tj ET
+BT /F1 14 Tf 100 570 Td (THANK YOU FOR BUYING) Tj ET
+BT /F1 14 Tf 100 550 Td (CANTEEN CITE Talamban Rd, Cebu City, 6000 Cebu) Tj ET
+BT /F1 14 Tf 100 530 Td (STAFF CITE RANIELO L SULTONES) Tj ET
+
+endstream
+endobj
+xref
+0 5
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000102 00000 n 
+0000000175 00000 n 
+trailer
+<< /Size 5 /Root 1 0 R >>
+startxref
+730
+%%EOF
