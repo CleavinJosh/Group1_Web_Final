@@ -13,7 +13,9 @@ try {
         "user_id" => $_SESSION['user_id']
     ]);
 
-    createPDF("resibo/{$currentDateTime}.pdf", $receipt, $_POST['customer_pay'], $_SESSION['fullName'], $_SESSION['role']);
+    $fullname = $_SESSION['fullName'] ?? 'RANIELO L SULTONES';
+
+    createPDF("resibo/{$currentDateTime}.pdf", $receipt, $_POST['customer_pay'], $fullname, $_SESSION['role']);
 
 }catch (Exception $e) {
     echo $e;
@@ -22,7 +24,7 @@ try {
 
 redirect('/');
 
-function createPDF($file, $products, $customerPaymentAmount, $cashier = 'RANIELO L SULTONES', $role = 'cashier') {
+function createPDF($file, $products, $customerPaymentAmount, $cashier, $role = 'cashier') {
     // PDF header
     $pdf  = "%PDF-1.3\n";
     $pdf .= "1 0 obj\n";
