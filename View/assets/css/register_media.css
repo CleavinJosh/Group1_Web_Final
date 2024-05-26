@@ -1,0 +1,48 @@
+@media (min-width: 360px) and (max-width: 800px){
+    
+    .personal-information-form-container{
+        width: 300px;
+    }
+
+    .account-details-form-container{
+        width: 300px;
+    }
+    
+    .cancel-and-create-buttons-container{
+        /* justify-content: center; */
+    }
+    .form-box{
+        margin-bottom: 0;
+    }
+
+    .last-form-box{
+        margin-bottom: 1rem;
+    }
+
+    .page-title{
+        font-size: 36px;
+        position: relative;
+        /* left: 2rem; */
+    }
+
+    .form-title{
+        font-size: 30px;
+    }
+
+    .form-label{
+        font-size: 24px;
+    }
+}
+
+@media (max-width:426px){
+    .header{
+        height: 125px;
+    }
+    .register-form-container{
+        margin-right: 2rem;
+    }
+    .page-title{
+        margin-left: 2rem;
+    }
+
+}

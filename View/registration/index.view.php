@@ -10,7 +10,7 @@
         <div class="top-form">
             <section>
                 <h2 class="form-title">Personal Information</h2>
-                <fieldset class="personal-information-form-container">
+                <fieldset class="personal-information-form-container general-container">
                     <label class="form-label top-in-the-list">
                         First name
                         <div>
@@ -38,7 +38,7 @@
                     <label class="form-label">
                         Email
                         <div>
-                            <input name="email" class="form-box" type="email" required>
+                            <input name="email" class="form-box last-form-box" type="email" required>
                         </div>
                     </label>
                 </fieldset>
@@ -46,17 +46,17 @@
 
             <section>
                 <h2 class="form-title">Account Details</h2>
-                <fieldset class="account-details-form-container">
+                <fieldset class="account-details-form-container general-container">
                     <label class="form-label">
                         Username
                         <div>
-                            <input name="username" class="form-box" type="text" required>
+                            <input name="username" class="form-box username-form-box" type="text" required>
                         </div>
                     </label>
                     <label class="form-label">
                         Password
                         <div>
-                            <input name="password" class="form-box " type="password" required>
+                            <input name="password" class="form-box password-form-box last-form-box" type="password" required>
                         </div>
                     </label>
                 </fieldset>

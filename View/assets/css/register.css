@@ -4,12 +4,16 @@ body, header{
     padding: 0;
 }
 
+body{
+    background-color: rgba(27,38,59, 0.9);
+}
+
 h1{
     margin: 0;
 }
 
 .header{
-    background-color: #2672B8;
+    background-color: #262626;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -23,12 +27,14 @@ h1{
 
 .form-title{
     font-size: 36px;
+    color: #fff;
 }
 
 .form-label{
     font-size: 24px;
     margin-top: 2rem;
     margin-left: 1rem;
+    color: #fff;
 }
 
 .form-box{
@@ -37,19 +43,33 @@ h1{
     margin-bottom: 2rem;
     border: 1px solid #000;
     border-radius: 4px;
-    background-color: #474747;
+    background-color: #262626;
     color: #fff;
     font-size: 18px;
+}
+
+.form-box:hover{
+    cursor: text;
+    outline: auto;
+}
+
+.password-form-box{
+    /* margin-right: 1rem; */
+}
+
+.general-container{
+    background-color: rgba(114,145,177, 0.5);
+    border: 1px solid transparent
 }
 
 .personal-information-form-container{
     /* display: grid;
     grid-template-columns: repeat(3, 1fr); */
-
+    max-width: 625px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 1rem;
-    max-width: 625px;
     border-radius: 20px;
 }
 
@@ -57,28 +77,37 @@ h1{
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    max-width: 700px;
+    max-width: 625px;
     padding-right: 1rem;
     border-radius: 20px;
 }
 
 .form-button{
-    background-color: #474747;
+    background-color: #262626;
     color: #fff;
     width: 157px;
     height: 35px;
     font-size: 18px;
+    border: transparent;
+}
+
+.form-button:hover{
+    outline: auto;
+    cursor: pointer;
 }
 
 .cancel-and-create-buttons-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
+    justify-content: center;
     margin-left: 2rem;
 }
 
 .top-form{
     margin-left: 3rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     /* flex-direction: column; */
     gap: 3rem;
@@ -87,6 +116,7 @@ h1{
 
 .bottom-form{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -98,4 +128,16 @@ h1{
 
 .login-link{
     font-size: 18px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    top: 5px;
+}
+
+a:hover{
+    text-decoration: underline;
+    /* outline: auto; */
 }
