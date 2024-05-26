@@ -1,16 +1,65 @@
 [
     {
+        "id": 4,
+        "product_type": null,
+        "product_name": "oa",
+        "product_price": 23,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 5,
+        "product_type": "Food",
+        "product_name": "hamburger",
+        "product_price": 34,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 6,
+        "product_type": "Food",
+        "product_name": "kakanin",
+        "product_price": 54,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 7,
+        "product_type": "Food",
+        "product_name": "suka",
+        "product_price": 10,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 8,
+        "product_type": "Drink",
+        "product_name": "kape",
+        "product_price": 65,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
         "id": 9,
-        "product_type": "",
-        "product_name": null,
-        "product_price": null,
-        "product_image": null
+        "product_type": "dessert",
+        "product_name": "okokok",
+        "product_price": 66,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
     },
     {
         "id": 10,
-        "product_type": "Food",
-        "product_name": "ranielo",
-        "product_price": 123,
-        "product_image": "..\/View\/assets\/img\/RobloxScreenShot20220306_135741573.png"
+        "product_type": "Drink",
+        "product_name": "softdrinls",
+        "product_price": 777,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 11,
+        "product_type": "snack",
+        "product_name": "test",
+        "product_price": 676,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+    },
+    {
+        "id": 12,
+        "product_type": "Drink",
+        "product_name": "sukka",
+        "product_price": 23,
+        "product_image": "..\/View\/assets\/img\/menu_bg.png"
     }
 ]

@@ -60,7 +60,7 @@
             Cash :
             <input id="modal_customer_pay" type="number" name="customer_pay" value="" required>
         </label>
-        <input type="submit">
+        <input type="submit"><br>
         <button type="button" id="modal_cancel">Cancel</button>
     </form>
 </div>

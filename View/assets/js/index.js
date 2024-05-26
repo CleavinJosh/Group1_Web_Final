@@ -7,8 +7,7 @@ document.querySelector('#btn-food').addEventListener('click', e => {
 
 document.querySelector('#btn-drink').addEventListener('click', e => {
     removeDOM();
-    loadData('drink');
-
+    loadData('Drink');
 });
 
 document.querySelector('#btn-dessert').addEventListener('click', e => {
@@ -74,25 +73,26 @@ function appendProductToMain(product) {
     imgElement.classList.add("fitCover");
 
     // Create item name div
-    const itemNameDiv = document.createElement("div");
-    itemNameDiv.classList.add("item-name");
+    const descriptionDiv = document.createElement("div");
+    descriptionDiv.classList.add("food_info");
 
     // Create product name heading
     const productNameHeading = document.createElement("span");
     productNameHeading.style.padding = '2px';
     productNameHeading.setAttribute("id", "product_name");
     productNameHeading.textContent = product.product_name;
+    productNameHeading.classList.add("item_name");
 
     // Create product price span
     const productPriceSpan = document.createElement("span");
     productPriceSpan.setAttribute("id", "product_price");
     productPriceSpan.textContent = product.product_price;
+    productPriceSpan.classList.add("product_price");
 
     
 
     // Append image, item name div to image container div
     imgContainerDiv.appendChild(imgElement);
-    imgContainerDiv.appendChild(itemNameDiv);
 
     // Create order container div
     const orderContainerDiv = document.createElement("div");
@@ -120,8 +120,8 @@ function appendProductToMain(product) {
     incrementButton.textContent = "+";
 
     // Append product name and price to item name div
-    orderContainerDiv.appendChild(productNameHeading);
-    orderContainerDiv.appendChild(productPriceSpan);
+    descriptionDiv.appendChild(productNameHeading);
+    descriptionDiv.appendChild(productPriceSpan);
 
     // Append buttons and product quantity to quantity panel div
     quantityPanelDiv.appendChild(decrementButton);
@@ -141,6 +141,7 @@ function appendProductToMain(product) {
 
     // Append image container and order container to main container div
     itemMenuDiv.appendChild(imgContainerDiv);
+    itemMenuDiv.appendChild(descriptionDiv);
     itemMenuDiv.appendChild(orderContainerDiv);
 
     // Append main container div to the document body or any other desired parent element
