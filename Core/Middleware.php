@@ -2,22 +2,17 @@
 
 class Middleware {
 
-    public static function auth()
-    {  
-        return empty($_SESSION) ? redirect("/login") : '';
-    }
-
-    public static function admin()
-    {  
-        switch($_SESSION['role'])
+    public static function auth( $middleware )
+    {
+        if( !empty($middleware) )
         {
-
-            case 'cashier': redirect("/"); break;
-            case 'admin': redirect("/admin"); break;
-            default: redirect("/login"); break;
-
+            if(empty($_SESSION))
+            {
+                redirect("/login");
+            }
         }
-
+        
+        return;
     }
 
 }
