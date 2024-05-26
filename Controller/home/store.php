@@ -13,7 +13,7 @@ try {
         "user_id" => 1000
     ]);
 
-    createPDF("Receipt/{$currentDateTime}.pdf", $receipt, $_POST['customer_pay']);
+    createPDF("resibo/{$currentDateTime}.pdf", $receipt, $_POST['customer_pay'], $_SESSION['fullName'], $_SESSION['role']);
 
 }catch (Exception $e) {
     echo $e;
@@ -22,7 +22,7 @@ try {
 
 redirect('/');
 
-function createPDF($file, $products, $customerPaymentAmount, $casher = 'RANIELO L SULTONES') {
+function createPDF($file, $products, $customerPaymentAmount, $cashier = 'RANIELO L SULTONES', $role = 'cashier') {
     // PDF header
     $pdf  = "%PDF-1.3\n";
     $pdf .= "1 0 obj\n";
@@ -72,7 +72,7 @@ function createPDF($file, $products, $customerPaymentAmount, $casher = 'RANIELO 
     $content .= "BT /F1 14 Tf 100 $yPos Td (" . "CANTEEN CITE Talamban Rd, Cebu City, 6000 Cebu" . ") Tj ET\n";
     $yPos -= 20;
 
-    $content .= "BT /F1 14 Tf 100 $yPos Td (" . "STAFF CITE $casher" . ") Tj ET\n";
+    $content .= "BT /F1 14 Tf 100 $yPos Td (" . "CITE $role $cashier" . ") Tj ET\n";
     $yPos -= 20;
 
     // Calculate content length

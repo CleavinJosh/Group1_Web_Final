@@ -9,7 +9,7 @@ try {
         "password" => password_hash($_POST['password'], PASSWORD_DEFAULT),
         "email" => $_POST['email'],
         "birthdate" => $_POST['birthdate'],
-        "full_name" => $_POST['firstname'] . '-' . $_POST['middle_name'] . '-' . $_POST['lastname'],
+        "full_name" => $_POST['firstname'] . ' ' . $_POST['middle_name'] . ' ' . $_POST['lastname'],
         "user_id" => rand(1000, 9999)
     ]);
 

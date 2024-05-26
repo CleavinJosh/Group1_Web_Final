@@ -1,51 +1,16 @@
 [
     {
-        "id": 1,
-        "product_type": "food",
-        "product_name": "spaghetti",
-        "product_price": 50,
-        "product_image": "..\/View\/assets\/img\/spag.jpg"
+        "id": 9,
+        "product_type": "",
+        "product_name": null,
+        "product_price": null,
+        "product_image": null
     },
     {
-        "id": 3,
-        "product_type": "dessert",
-        "product_name": "ranielo",
-        "product_price": 99999999,
-        "product_image": "..\/View\/assets\/img\/imresizer-1704839220200.jpg"
-    },
-    {
-        "id": 4,
-        "product_type": "dessert",
-        "product_name": "ranielo",
-        "product_price": 66215,
-        "product_image": "..\/View\/assets\/img\/imresizer-1704839220200.jpg"
-    },
-    {
-        "id": 5,
-        "product_type": "dessert",
-        "product_name": "ranielo",
-        "product_price": 1252,
-        "product_image": "..\/View\/assets\/img\/imresizer-1704839220200.jpg"
-    },
-    {
-        "id": 6,
+        "id": 10,
         "product_type": "Food",
         "product_name": "ranielo",
-        "product_price": 85125,
-        "product_image": "..\/View\/assets\/img\/profile.jpg"
-    },
-    {
-        "id": 7,
-        "product_type": "dessert",
-        "product_name": "ranielo",
-        "product_price": 215215,
-        "product_image": "..\/View\/assets\/img\/imresizer-1704839220200.jpg"
-    },
-    {
-        "id": 8,
-        "product_type": "Food",
-        "product_name": "ranielo",
-        "product_price": 2414241,
-        "product_image": "..\/View\/assets\/img\/RobloxScreenShot20221123_224944481.png"
+        "product_price": 123,
+        "product_image": "..\/View\/assets\/img\/RobloxScreenShot20220306_135741573.png"
     }
 ]

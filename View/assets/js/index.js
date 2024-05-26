@@ -23,6 +23,16 @@ document.querySelector('#btn-snack').addEventListener('click', e => {
     
 });
 
+try {
+    document.querySelector('#btn-admin').addEventListener('click', e => {
+        location.href = '/index.php/admin';
+        
+    });
+}catch (error) {
+    console.error("Error adding event listener:", error);
+}
+
+
 document.querySelector('#btn-logout').addEventListener('click', e => {
     location.href = '/index.php/destroy';
     
@@ -68,7 +78,8 @@ function appendProductToMain(product) {
     itemNameDiv.classList.add("item-name");
 
     // Create product name heading
-    const productNameHeading = document.createElement("h1");
+    const productNameHeading = document.createElement("span");
+    productNameHeading.style.padding = '2px';
     productNameHeading.setAttribute("id", "product_name");
     productNameHeading.textContent = product.product_name;
 
@@ -77,9 +88,7 @@ function appendProductToMain(product) {
     productPriceSpan.setAttribute("id", "product_price");
     productPriceSpan.textContent = product.product_price;
 
-    // Append product name and price to item name div
-    itemNameDiv.appendChild(productNameHeading);
-    itemNameDiv.appendChild(productPriceSpan);
+    
 
     // Append image, item name div to image container div
     imgContainerDiv.appendChild(imgElement);
@@ -110,6 +119,10 @@ function appendProductToMain(product) {
     incrementButton.setAttribute("id", "increment_button");
     incrementButton.textContent = "+";
 
+    // Append product name and price to item name div
+    orderContainerDiv.appendChild(productNameHeading);
+    orderContainerDiv.appendChild(productPriceSpan);
+
     // Append buttons and product quantity to quantity panel div
     quantityPanelDiv.appendChild(decrementButton);
     quantityPanelDiv.appendChild(productQuantityDiv);
@@ -117,9 +130,10 @@ function appendProductToMain(product) {
 
     // Create add button
     const addButton = document.createElement("button");
+    addButton.style.padding = '10px';
     addButton.setAttribute("id", "add_product_orderpanel");
     addButton.classList.add("placeOrder");
-    addButton.textContent = "Add";
+    addButton.textContent = "ADD";
 
     // Append quantity panel and add button to order container div
     orderContainerDiv.appendChild(quantityPanelDiv);

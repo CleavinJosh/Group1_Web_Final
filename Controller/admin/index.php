@@ -1,5 +1,7 @@
 <?php
 
+Middleware::admin();
+
 $conn = new Database( config() );
 
 if( empty($_GET['type']) ) header("location: ?type=food");

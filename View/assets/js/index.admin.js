@@ -14,3 +14,14 @@ document.querySelector('#btn-dessert').addEventListener('click', e => {
 document.querySelector('#btn-snack').addEventListener('click', e => {
     location.href = '/index.php/admin?type=snack';
 });
+
+document.querySelector('#menu').addEventListener('click', e => {
+    location.href = '/index.php/';
+});
+
+document.querySelector('#logout').addEventListener('click', e => {
+    location.href = '/index.php/destroy';
+    
+});
+
+

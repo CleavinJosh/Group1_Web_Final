@@ -4,20 +4,20 @@
 <link rel="stylesheet" href="../View/assets/css/media_query_900.css">
 <link rel="stylesheet" href="../View/assets/css/mobile.css">
 
-<div class="container">
+<div class="container" style="background-image: url(..\\View\\assets\\img\\menu_bg.png);">
     <!-- kani nga panel kay naa diri ang button para navigate to food, drinks, ect..  -->
     <nav>
-      <button id="btn-food">FOOD</button>
-      <button id="btn-drink">DRINKS</button>
-      <button id="btn-dessert">DESSERT</button>
-      <button id="btn-snack">SNACKS</button>
-      <button id="btn-logout">LOG OUT</button>
+        <button id="btn-food">FOOD</button>
+        <button id="btn-drink">DRINKS</button>
+        <button id="btn-dessert">DESSERT</button>
+        <button id="btn-snack">SNACKS</button>
+        <?php if($_SESSION['role'] == 'admin') :?>
+            <button id="btn-admin">ADMIN</button>
+        <?php endif?>
+        <button id="btn-logout">LOG OUT</button>
     </nav>
     <!-- mao ni ang panel nga naay menu items -->
     <main>
-        
-        
-        
       <!-- if mag add og lain nga item sa menu, copy lang ang div nga naay class 
       nga itemMenu
       pwede ra gamitan og JavaScript sa pag add.
@@ -26,6 +26,10 @@
     <!-- ari nga panel makita ang gi order nimo og ang total -->
     <aside>
         <!-- pwede diri ma cancel ang order  -->
+        <div class="label">
+            <h1>Order List</h1>
+        </div>
+
         <div id="orderPanel" class="orderPanel">
         
         </div>

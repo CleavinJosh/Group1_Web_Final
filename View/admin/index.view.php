@@ -18,6 +18,8 @@
         <aside>
             <h1>PRODUCTS</h1>
             <button data-bs-toggle="modal" data-bs-target="#add_product">ADD</button>
+            <button id="menu">MENU</button>
+            <button id="logout">Logout</button>
         </aside>
 
         <main>
@@ -44,7 +46,7 @@
                         <td><?= $item['product_name'] ?></td>
                         <td><?= $item['product_price'] ?></td>
                         <td>
-                            <button>EDIT</button>
+                            <a href="/index.php/admin/edit?id=<?= $item['id'] ?>">EDIT</a>
                         </td>
                         <td>
                             <form action="/index.php/admin" method="POST">

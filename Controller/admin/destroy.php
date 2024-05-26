@@ -1,5 +1,7 @@
 <?php
 
+Middleware::admin();
+
 $conn = new Database( config() );
 
 try {

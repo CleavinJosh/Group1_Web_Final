@@ -9,14 +9,13 @@ class Middleware {
 
     public static function admin()
     {  
-        switch($_SESSION['role'])
+
+        if(!empty($_SESSION['role']))
         {
-
-            case 'cashier': redirect("/"); break;
-            case 'admin': redirect("/admin"); break;
-            default: redirect("/login"); break;
-
+            return $_SESSION['role'] != 'admin' ? redirect('/') : '';   
         }
+
+        return redirect('/login');
 
     }
 
