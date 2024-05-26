@@ -15,25 +15,9 @@
     </nav>
     <!-- mao ni ang panel nga naay menu items -->
     <main>
-        <?php foreach($properties as $property) : ?>
-            <div class="itemMenu">
-                <div class="imgContainer">
-                <img src="<?= $property['product_image'] ?>" alt="<?= $property['product_name'] ?>" class="fitCover">
-                <div class="item-name">
-                    <h1 id="product_name"><?= $property['product_name'] ?></h1>
-                    <span id="product_price"><?= $property['product_price'] ?></span>
-                </div>
-            </div>
-            <div class="orderContainer">
-            <div id="action" class="quantityPanel">
-                <button id="decrement_button">-</button>
-                <div id="product_quantity" class="amount">0</div>
-                <button id="increment_button">+</button>
-                </div>
-                    <button id="add_product_orderpanel" class="placeOrder">Add</button>
-                </div>
-            </div>
-        <?php endforeach; ?>
+        
+        
+        
       <!-- if mag add og lain nga item sa menu, copy lang ang div nga naay class 
       nga itemMenu
       pwede ra gamitan og JavaScript sa pag add.

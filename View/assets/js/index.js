@@ -1,20 +1,25 @@
+loadData();
 document.querySelector('#btn-food').addEventListener('click', e => {
-    location.href = '/index.php/?type=food';
+    removeDOM();
+    loadData();
     
 });
 
 document.querySelector('#btn-drink').addEventListener('click', e => {
-    location.href = '/index.php/?type=drink';
-    
+    removeDOM();
+    loadData('drink');
+
 });
 
 document.querySelector('#btn-dessert').addEventListener('click', e => {
-    location.href = '/index.php/?type=dessert';
+    removeDOM();
+    loadData('dessert');
     
 });
 
 document.querySelector('#btn-snack').addEventListener('click', e => {
-    location.href = '/index.php/?type=snack';
+    removeDOM();
+    loadData('snack');
     
 });
 
@@ -25,34 +30,150 @@ document.querySelector('#btn-logout').addEventListener('click', e => {
 
 
 /* 
-    send data to backend
+    Create product
 */
 
-async function getRequest( file = {} )
-{
-    const xhttp = new XMLHttpRequest();
-    
-    xhttp.open("POST", "/index.php/");
-    xhttp.setRequestHeader("Content-Type", "application/json");
+function loadJSON(file, callback) {
+    var xhr = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-
-        if (xhttp.readyState === 4 && xhttp.status === 200) { // The request is done
-
-                console.log("Response received: ", xhttp.responseText);
-                const response = JSON.parse(xhttp.responseText);
-                console.log(response);
-                // Do something with the response
-
-        }else console.error("Error in request: ", xhttp.statusText);
-
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Parse the JSON response and call the callback with the parsed data
+            callback(JSON.parse(xhr.responseText));
+        }
     };
 
+    xhr.open('GET', file, true);
+    xhr.send();
+}
 
-    xhttp.send(JSON.stringify(file));
+// Function to create and append the product HTML
+function appendProductToMain(product) {
+    // Create main container div
+    const itemMenuDiv = document.createElement("div");
+    itemMenuDiv.classList.add("itemMenu");
+
+    // Create image container div
+    const imgContainerDiv = document.createElement("div");
+    imgContainerDiv.classList.add("imgContainer");
+
+    // Create image element
+    const imgElement = document.createElement("img");
+    imgElement.setAttribute("src", product.product_image);
+    imgElement.setAttribute("alt", product.product_name);
+    imgElement.classList.add("fitCover");
+
+    // Create item name div
+    const itemNameDiv = document.createElement("div");
+    itemNameDiv.classList.add("item-name");
+
+    // Create product name heading
+    const productNameHeading = document.createElement("h1");
+    productNameHeading.setAttribute("id", "product_name");
+    productNameHeading.textContent = product.product_name;
+
+    // Create product price span
+    const productPriceSpan = document.createElement("span");
+    productPriceSpan.setAttribute("id", "product_price");
+    productPriceSpan.textContent = product.product_price;
+
+    // Append product name and price to item name div
+    itemNameDiv.appendChild(productNameHeading);
+    itemNameDiv.appendChild(productPriceSpan);
+
+    // Append image, item name div to image container div
+    imgContainerDiv.appendChild(imgElement);
+    imgContainerDiv.appendChild(itemNameDiv);
+
+    // Create order container div
+    const orderContainerDiv = document.createElement("div");
+    orderContainerDiv.classList.add("orderContainer");
+
+    // Create quantity panel div
+    const quantityPanelDiv = document.createElement("div");
+    quantityPanelDiv.setAttribute("id", "action");
+    quantityPanelDiv.classList.add("quantityPanel");
+
+    // Create decrement button
+    const decrementButton = document.createElement("button");
+    decrementButton.setAttribute("id", "decrement_button");
+    decrementButton.textContent = "-";
+
+    // Create product quantity div
+    const productQuantityDiv = document.createElement("div");
+    productQuantityDiv.setAttribute("id", "product_quantity");
+    productQuantityDiv.classList.add("amount");
+    productQuantityDiv.textContent = "0";
+
+    // Create increment button
+    const incrementButton = document.createElement("button");
+    incrementButton.setAttribute("id", "increment_button");
+    incrementButton.textContent = "+";
+
+    // Append buttons and product quantity to quantity panel div
+    quantityPanelDiv.appendChild(decrementButton);
+    quantityPanelDiv.appendChild(productQuantityDiv);
+    quantityPanelDiv.appendChild(incrementButton);
+
+    // Create add button
+    const addButton = document.createElement("button");
+    addButton.setAttribute("id", "add_product_orderpanel");
+    addButton.classList.add("placeOrder");
+    addButton.textContent = "Add";
+
+    // Append quantity panel and add button to order container div
+    orderContainerDiv.appendChild(quantityPanelDiv);
+    orderContainerDiv.appendChild(addButton);
+
+    // Append image container and order container to main container div
+    itemMenuDiv.appendChild(imgContainerDiv);
+    itemMenuDiv.appendChild(orderContainerDiv);
+
+    // Append main container div to the document body or any other desired parent element
+    document.querySelector('main').appendChild(itemMenuDiv);
+
+
+    decrementButton.addEventListener('click', () => {
+        buttonDecrement(productQuantityDiv);
+    });
+
+    incrementButton.addEventListener('click', () => {
+        buttonIncrement(productQuantityDiv);
+    });
+
+    addButton.addEventListener('click', () => {
+        addProductToOrderPanel(productNameHeading, productQuantityDiv, productPriceSpan);
+    });
+
+
 
 }
 
+// Load the JSON file and append the product to main
+function loadData( type = "Food")
+{   
+    loadJSON('../Model/json/product.json', function(data) {
+        data.forEach(item => {
+            if(item.product_type == type)
+            {
+                appendProductToMain(item);
+            }
+        });
+        
+    });
+}
+
+// remove parent child in DOM
+function removeDOM( id = "main")
+{
+    const parentElement = document.querySelector(id);
+
+    while (parentElement.firstChild)
+    {
+        parentElement.removeChild(parentElement.firstChild);
+    }
+    
+}
 
 
 
@@ -61,24 +182,15 @@ async function getRequest( file = {} )
 
 */
 
-let addProductToOrderpanel = document.querySelectorAll('#add_product_orderpanel');
-
-let productName = document.querySelectorAll('#product_name');
-let productPrice = document.querySelectorAll('#product_price');
-let productQuantity = document.querySelectorAll('#product_quantity');
-
-addProductToOrderpanel.forEach((element, index) => {
-  element.addEventListener('click', function(event) {
-
-    if(parseInt(productQuantity[index].innerHTML) > 0)
+function addProductToOrderPanel(productName, productQuantity, productPrice)
+{
+    if(parseInt(productQuantity.innerHTML) > 0)
     {
-        addToOrderPanel(productName[index].innerHTML, productQuantity[index].innerHTML, productPrice[index].innerHTML);
+        addToOrderPanel(productName.innerHTML, productQuantity.innerHTML, productPrice.innerHTML);
     }
-
-    productQuantity[index].innerHTML = 0;
-  });
-});
-
+    
+    productQuantity.innerHTML = 0;
+}
 
 function addToOrderPanel(name, quantity, price) {
     let wrapper = document.querySelector('#orderPanel');
@@ -142,30 +254,24 @@ function addToOrderPanel(name, quantity, price) {
 
 */
 
-let actionFeild = document.querySelectorAll('#action');
-let decrement = document.querySelectorAll('#decrement_button');
-let increment = document.querySelectorAll('#increment_button');
+function buttonDecrement(value)
+{
+    let quantity = parseInt(value.innerHTML, 10); // Convert the innerHTML to an integer
 
+    // Decrement the quantity and update the innerHTML
+    if (quantity > 0) {
+        value.innerHTML = quantity - 1;
+    }
+}
 
-decrement.forEach((element, index) => {
-    element.addEventListener('click', e => {
-        let quantity = parseInt(productQuantity[index].innerHTML, 10); // Convert the innerHTML to an integer
+function buttonIncrement(value)
+{
+    let quantity = parseInt(value.innerHTML, 10); // Convert the innerHTML to an integer
 
-        // Decrement the quantity and update the innerHTML
-        if (quantity > 0) productQuantity[index].innerHTML = quantity - 1;
-        
-    });
-});
-
-increment.forEach((element, index) => {
-    element.addEventListener('click', e => {
-        let quantity = parseInt(productQuantity[index].innerHTML, 10); // Convert the innerHTML to an integer
-
-        // Decrement the quantity and update the innerHTML
-        productQuantity[index].innerHTML = quantity + 1;
-        
-    });
-});
+    // Decrement the quantity and update the innerHTML
+    if (quantity >= 0) value.innerHTML = quantity + 1;
+    
+}
 
 
 
@@ -228,6 +334,12 @@ checkOutButton.addEventListener('click', e => {
         document.querySelector('#modal_display_total').value = displayTotalAmountElement.innerHTML;
         document.querySelector('#modal_receipt').value = JSON.stringify(getAllTheOrderList());
         
+
+        if(displayTotalAmountElement.innerHTML == "0")
+        {
+            displayTotalAmountElement.innerHTML = 0;
+            removeDOM("#orderPanel");
+        }
     }
     
 });
@@ -260,6 +372,6 @@ function getAllTheOrderList() {
             "product_total_price": product_total_prices[index].innerHTML
         });
     });
-
+        
     return receipt;
 }

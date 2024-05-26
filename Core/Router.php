@@ -8,11 +8,9 @@ class Router {
         $this->routes[] = [
             "method" => $method,
             'uri' => '/index.php' . $uri,
-            'controller' => $controller,
-            'middleware' => null
+            'controller' => $controller
         ];
 
-        return $this;
     }
 
     public function get( $uri, $controller )
@@ -35,20 +33,12 @@ class Router {
         return $this->add('DELETE', $uri, $controller);
     }
 
-    public function only ( $key )
-    {
-        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
-
-        return $this;
-    }
-
     public function route( $uri, $method )
     {
         foreach($this->routes as $route)
         {
             if($route['uri'] == $uri && $route['method'] == $method)
             {   
-                Middleware::auth( $route['middleware'] );
 
                 return require $route['controller'];
             }
