@@ -8,9 +8,9 @@ $receipt = json_decode($_POST['receipt'], true);
 try {
 
     $conn->query("INSERT INTO receipts (casher_name, receipt_created, user_id) values(:casher_name, :receipt_created, :user_id)", [
-        "casher_name" => "Ranielo L Sultones",
+        "casher_name" => $_SESSION['fullName'],
         "receipt_created" => $currentDateTime . ".pdf",
-        "user_id" => 1000
+        "user_id" => $_SESSION['user_id']
     ]);
 
     createPDF("resibo/{$currentDateTime}.pdf", $receipt, $_POST['customer_pay'], $_SESSION['fullName'], $_SESSION['role']);

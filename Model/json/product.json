@@ -1,65 +1,79 @@
 [
     {
+        "id": 1,
+        "product_type": "FOOD",
+        "product_name": "Sandwich",
+        "product_price": 40,
+        "product_image": "..\/View\/assets\/img\/Sandwich.png"
+    },
+    {
+        "id": 2,
+        "product_type": "FOOD",
+        "product_name": "Pasta",
+        "product_price": 50,
+        "product_image": "..\/View\/assets\/img\/Pasta.png"
+    },
+    {
+        "id": 3,
+        "product_type": "FOOD",
+        "product_name": "Burger",
+        "product_price": 45,
+        "product_image": "..\/View\/assets\/img\/Burger.jpg"
+    },
+    {
         "id": 4,
-        "product_type": null,
-        "product_name": "oa",
-        "product_price": 23,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "FOOD",
+        "product_name": "Salad",
+        "product_price": 25,
+        "product_image": "..\/View\/assets\/img\/Salad.jpg"
     },
     {
         "id": 5,
-        "product_type": "Food",
-        "product_name": "hamburger",
-        "product_price": 34,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DRINK",
+        "product_name": "Coffee",
+        "product_price": 20,
+        "product_image": "..\/View\/assets\/img\/Coffee.jpg"
     },
     {
         "id": 6,
-        "product_type": "Food",
-        "product_name": "kakanin",
-        "product_price": 54,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DRINK",
+        "product_name": "coke",
+        "product_price": 15,
+        "product_image": "..\/View\/assets\/img\/coke.jpg"
     },
     {
         "id": 7,
-        "product_type": "Food",
-        "product_name": "suka",
-        "product_price": 10,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DRINK",
+        "product_name": "Smoothie",
+        "product_price": 25,
+        "product_image": "..\/View\/assets\/img\/Smoothie.jpg"
     },
     {
         "id": 8,
-        "product_type": "Drink",
-        "product_name": "kape",
-        "product_price": 65,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DESSERT",
+        "product_name": "Ice Cream",
+        "product_price": 25,
+        "product_image": "..\/View\/assets\/img\/Ice Cream.jpg"
     },
     {
         "id": 9,
-        "product_type": "dessert",
-        "product_name": "okokok",
-        "product_price": 66,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DESSERT",
+        "product_name": "Cookies",
+        "product_price": 5,
+        "product_image": "..\/View\/assets\/img\/Cookies.jpg"
     },
     {
         "id": 10,
-        "product_type": "Drink",
-        "product_name": "softdrinls",
-        "product_price": 777,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "DESSERT",
+        "product_name": "Brownies",
+        "product_price": 15,
+        "product_image": "..\/View\/assets\/img\/Brownies.jpeg"
     },
     {
         "id": 11,
-        "product_type": "snack",
-        "product_name": "test",
-        "product_price": 676,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
-    },
-    {
-        "id": 12,
-        "product_type": "Drink",
-        "product_name": "sukka",
-        "product_price": 23,
-        "product_image": "..\/View\/assets\/img\/menu_bg.png"
+        "product_type": "SNACK",
+        "product_name": "Chips",
+        "product_price": 20,
+        "product_image": "..\/View\/assets\/img\/Chips.png"
     }
 ]

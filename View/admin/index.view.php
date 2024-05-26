@@ -83,10 +83,10 @@
                         <label>
                         <select name="type" class="form-select form-select-sm mb-3" aria-label="Selection" style="width: 250px;" required>
                             <option selected disabled value="">TYPE</option>
-                            <option name="type" value="Food">FOOD</option>
-                            <option name="type" value="Drink">DRINK</option>
-                            <option name="type" value="dessert">DESSERT</option>
-                            <option name="type" value="snack">SNACK</option>
+                            <option name="type" value="FOOD">FOOD</option>
+                            <option name="type" value="DRINK">DRINK</option>
+                            <option name="type" value="DESSERT">DESSERT</option>
+                            <option name="type" value="SNACK">SNACK</option>
                         </select> 
                         </label>
                         <label>

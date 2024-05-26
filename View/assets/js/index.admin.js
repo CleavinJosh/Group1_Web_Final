@@ -1,18 +1,18 @@
 document.querySelector('#btn-food').addEventListener('click', e => {
-    location.href = '/index.php/admin?type=food';
+    location.href = '/index.php/admin?type=FOOD';
     
 });
 
 document.querySelector('#btn-drink').addEventListener('click', e => {
-    location.href = '/index.php/admin?type=drink';
+    location.href = '/index.php/admin?type=DRINK';
 });
 
 document.querySelector('#btn-dessert').addEventListener('click', e => {
-    location.href = '/index.php/admin?type=dessert';
+    location.href = '/index.php/admin?type=DESSERT';
 });
 
 document.querySelector('#btn-snack').addEventListener('click', e => {
-    location.href = '/index.php/admin?type=snack';
+    location.href = '/index.php/admin?type=SNACK';
 });
 
 document.querySelector('#menu').addEventListener('click', e => {
