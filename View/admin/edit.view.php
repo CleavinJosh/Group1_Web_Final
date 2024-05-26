@@ -13,10 +13,10 @@
             <div class="input-group">
                 <select name="type" class="form-select form-select-sm mb-3" aria-label="Selection" required>
                     <option name="type" selected disabled value="<?= $value['product_type'] ?>"><?= $value['product_type'] ?></option>
-                    <option name="type" value="food">FOOD</option>
-                    <option name="type" value="drink">DRINK</option>
-                    <option name="type" value="dessert">DESSERT</option>
-                    <option name="type" value="snack">SNACK</option>
+                    <option name="type" value="FOOD">FOOD</option>
+                    <option name="type" value="DRINK">DRINK</option>
+                    <option name="type" value="DESSERT">DESSERT</option>
+                    <option name="type" value="SNACK">SNACK</option>
                 </select> 
             </div>
             <div class="input-group mb-3">

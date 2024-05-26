@@ -7,18 +7,18 @@ document.querySelector('#btn-food').addEventListener('click', e => {
 
 document.querySelector('#btn-drink').addEventListener('click', e => {
     removeDOM();
-    loadData('Drink');
+    loadData('DRINK');  
 });
 
 document.querySelector('#btn-dessert').addEventListener('click', e => {
     removeDOM();
-    loadData('dessert');
+    loadData('DESSERT');
     
 });
 
 document.querySelector('#btn-snack').addEventListener('click', e => {
     removeDOM();
-    loadData('snack');
+    loadData('SNACK');
     
 });
 
@@ -165,7 +165,7 @@ function appendProductToMain(product) {
 }
 
 // Load the JSON file and append the product to main
-function loadData( type = "Food")
+function loadData( type = "FOOD")
 {   
     loadJSON('../Model/json/product.json', function(data) {
         data.forEach(item => {
