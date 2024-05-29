@@ -19,6 +19,8 @@ try {
 
     if(password_verify($_POST['password'], $password))
     {
+        Validation::unsetAttributes('login');
+
         $_SESSION['role'] = 'cashier';
         $_SESSION['user_id'] = $result['user_id'];
         $_SESSION['email'] = $result['email'];
@@ -28,18 +30,19 @@ try {
 
     }else {
 
-        displayError([
-            "error" => "NONE",
-            "description" => "WRONG PASSWORD",
-            "redirect" => "/index.php/login"
+        Validation::setAttributes('login', [
+            'error' => 'Wrong username or password',
+            'oldUsername' => $_POST['username']
         ]);
+
+        redirect('/login');
 
     }
 
 }catch(Exception $e) {
     
     displayError([
-        "error" => "NONE",
+        "error" => 404,
         "description" => $e,
         "redirect" => "/index.php/login"
     ]);

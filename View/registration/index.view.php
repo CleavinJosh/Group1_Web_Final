@@ -14,31 +14,31 @@
                     <label class="form-label top-in-the-list">
                         First name
                         <div>
-                            <input name="firstname" class="form-box" type="text" required>
+                            <input name="firstname" class="form-box" type="text" required value="<?= $_SESSION['registration']['regfirstname'] ?? ''?>">
                         </div>
                     </label>
                     <label class="form-label">
                         Middle name
                         <div>
-                            <input name="middle_name" class="form-box" type="text" required>
+                            <input name="middle_name" class="form-box" type="text" required value="<?= $_SESSION['registration']['regMiddlename'] ?? ''?>">
                         </div>
                     </label>
                     <label class="form-label">
                         Last name
                         <div>
-                            <input name="lastname" class="form-box" type="text" required>
+                            <input name="lastname" class="form-box" type="text" required value="<?= $_SESSION['registration']['regLastname'] ?? ''?>">
                         </div>
                     </label>
                     <label class="form-label">
                         Birthdate
                         <div>
-                            <input name="birthdate" class="form-box" type="date" required>
+                            <input name="birthdate" class="form-box" type="date" required value="<?= $_SESSION['registration']['regBirthdate'] ?? ''?>">
                         </div>
                     </label>
                     <label class="form-label">
                         Email
                         <div>
-                            <input name="email" class="form-box last-form-box" type="email" required>
+                            <input name="email" class="form-box last-form-box" type="email" required value="<?= $_SESSION['registration']['regEmail'] ?? ''?>">
                         </div>
                     </label>
                 </fieldset>
@@ -46,6 +46,9 @@
 
             <section>
                 <h2 class="form-title">Account Details</h2>
+                <?php if(!empty($_SESSION['registration'])) : ?>
+                    <h2 style="color: red;">username is already exist</h2>
+                <?php endif; ?>
                 <fieldset class="account-details-form-container general-container">
                     <label class="form-label">
                         Username
@@ -56,19 +59,20 @@
                     <label class="form-label">
                         Password
                         <div>
-                            <input name="password" class="form-box password-form-box last-form-box" type="password" required>
+                            <input name="password" class="form-box password-form-box last-form-box" type="password" required value="<?= $_SESSION['registration']['regPassword'] ?? ''?>">
                         </div>
                     </label>
                 </fieldset>
             </section>
         </div>
+
         <div class="bottom-form">
             <section class="cancel-and-create-buttons-container">
                 <button type="button" class="form-button cancel-button">Cancel</button>
                 <button type="submit" class="form-button create-button">Create account</button>
                 <a class="login-link" href="/index.php/login">Already have an account? Login now</a>
             </section>    
-        </div>            
+        </div>
     </form>
 </main>
 

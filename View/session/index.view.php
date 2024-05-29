@@ -8,12 +8,15 @@
 </section>
 
 <div class="login-form-container-container">
-    <section class="login-form-container">
+    <section class="login-form-container">   
         <form class="login-form" action="/index.php/login" method="POST">
+        <?php if( !empty($_SESSION['login'])) :?>
+            <h4 style="color: red; font-size: 1rem;"><?= $_SESSION['login']['error'] ?></h4>
+        <?php endif;?>    
             <label class="form-label">
                 Username
                 <div>
-                    <input name="username" class="form-input-box" type="text" required>
+                    <input name="username" class="form-input-box" type="text" required value="<?= $_SESSION['login']['oldUsername'] ?? ''?>">
                 </div>
             </label>
             <label class="form-label">
@@ -22,12 +25,12 @@
                     <input name="password" class="form-input-box" type="password" required>
                 </div>
             </label>
-
+            
             <div class="forgot-password-link-and-login-button-container">
                 <a href="" class="forgot-password-link">Forgot Password?</a>
                 <button class="login-button" type="submit">Login</button>
             </div>
-
+            
             <div>
                 <a class="create-an-account-link" href="/index.php/registration">Don't have an account? Create one</a>
             </div>

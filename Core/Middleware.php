@@ -19,4 +19,19 @@ class Middleware {
 
     }
 
+    public static function restrict()
+    {
+        switch($_SESSION['role'] ?? '')
+        {
+            case 'admin': 
+                redirect('/admin');
+                break;
+            case 'cashier': 
+                redirect('/');
+                break;
+            default:
+                break;
+        }
+    }
+
 }

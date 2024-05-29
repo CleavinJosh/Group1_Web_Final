@@ -14,16 +14,19 @@ try {
     ]);
 
 }catch (Exception $e){
-    
-    displayError([
-        "error" => 406,
-        "description" => "USERNAME IS ALREADY EXIST",
-        "redirect" => "/index.php/registration"
+
+
+    Validation::setAttributes('registration', [
+        'error' => 'Username is Already taken',
+        'regPassword' => $_POST['password'],
+        'regEmail' => $_POST['email'],
+        'regBirthdate' => $_POST['birthdate'],
+        'regfirstname' => $_POST['firstname'],
+        'regMiddlename' => $_POST['middle_name'],
+        'regLastname' => $_POST['lastname'],
     ]);
-
-}finally {
-
-    redirect("/login");
+    
 
 }
 
+redirect('/login');

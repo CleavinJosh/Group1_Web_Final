@@ -3,6 +3,7 @@
 session_start();
 
 require 'Core/function.php';
+require 'Core/Validation.php';
 require 'Core/Middleware.php';
 require 'Core/Router.php';
 require 'Model/Database.php';
