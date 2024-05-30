@@ -76,6 +76,13 @@ th:nth-child(3) {
 
 }
 
+th {
+
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.5ch;
+}
+
 /* main design  */
 
 main{
