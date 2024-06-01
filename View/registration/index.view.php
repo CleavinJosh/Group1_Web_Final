@@ -68,7 +68,7 @@
 
         <div class="bottom-form">
             <section class="cancel-and-create-buttons-container">
-                <button type="button" class="form-button cancel-button">Cancel</button>
+                <button id="cancel_button" type="button" class="form-button cancel-button">Cancel</button>
                 <button type="submit" class="form-button create-button">Create account</button>
                 <a class="login-link" href="/index.php/login">Already have an account? Login now</a>
             </section>    
@@ -76,4 +76,5 @@
     </form>
 </main>
 
+<script src="../View/assets/js/registration.js"></script>
 <?php require 'View/partials/footer.php'; ?>

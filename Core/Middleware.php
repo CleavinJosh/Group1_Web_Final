@@ -4,7 +4,7 @@ class Middleware {
 
     public static function auth()
     {  
-        return empty($_SESSION) ? redirect("/login") : '';
+        return empty($_SESSION['role']) ? redirect("/login") : '';
     }
 
     public static function admin()

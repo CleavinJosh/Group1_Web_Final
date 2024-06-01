@@ -27,7 +27,7 @@
             </label>
             
             <div class="forgot-password-link-and-login-button-container">
-                <a href="" class="forgot-password-link">Forgot Password?</a>
+                <a href="/index.php/suggestion" class="forgot-password-link">Suggestion?</a>
                 <button class="login-button" type="submit">Login</button>
             </div>
             

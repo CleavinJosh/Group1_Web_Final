@@ -1,5 +1,5 @@
 
-CREATE TABLE `canteen`.`users` (
+CREATE TABLE `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(100) NOT NULL,
   `password` VARCHAR(255) NULL,
@@ -11,7 +11,7 @@ CREATE TABLE `canteen`.`users` (
   UNIQUE INDEX `username_UNIQUE` (`username` ASC) VISIBLE);
 
 
-CREATE TABLE `canteen`.`product_items` (
+CREATE TABLE `product_items` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `product_type` VARCHAR(45) NULL,
   `product_name` VARCHAR(100) NULL,
@@ -19,9 +19,19 @@ CREATE TABLE `canteen`.`product_items` (
   `product_image` VARCHAR(255) NULL,
   PRIMARY KEY (`id`));
 
-CREATE TABLE `canteen`.`receipts` (
+CREATE TABLE `receipts` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `casher_name` VARCHAR(100) NULL,
   `receipt_created` VARCHAR(255) NULL,
   `user_id` INT NOT NULL,
   PRIMARY KEY (`id`));
+
+CREATE TABLE `reports` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type_report` varchar(50) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `suggestion` varchar(255) DEFAULT NULL,
+  `date_created` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);

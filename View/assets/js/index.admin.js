@@ -19,6 +19,11 @@ document.querySelector('#menu').addEventListener('click', e => {
     location.href = '/index.php/';
 });
 
+document.querySelector('#report').addEventListener('click', e => {
+    location.href = '/index.php/reports';
+    
+});
+
 document.querySelector('#logout').addEventListener('click', e => {
     location.href = '/index.php/destroy';
     

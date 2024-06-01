@@ -31,7 +31,7 @@ CREATE TABLE `product_items` (
   `product_price` int DEFAULT NULL,
   `product_image` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `receipts` (
   `receipt_created` varchar(255) DEFAULT NULL,
   `user_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,36 @@ CREATE TABLE `receipts` (
 
 LOCK TABLES `receipts` WRITE;
 /*!40000 ALTER TABLE `receipts` DISABLE KEYS */;
+INSERT INTO `receipts` VALUES (1,'Ranielo lapina sultones','20240526-13-56-10.pdf',3365);
 /*!40000 ALTER TABLE `receipts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reports`
+--
+
+DROP TABLE IF EXISTS `reports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `reports` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type_report` varchar(50) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `suggestion` varchar(255) DEFAULT NULL,
+  `date_created` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reports`
+--
+
+LOCK TABLES `reports` WRITE;
+/*!40000 ALTER TABLE `reports` DISABLE KEYS */;
+INSERT INTO `reports` VALUES (1,'SUGGESTION','ranielo','test@gmail.com','wfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwaf','2024-06-01'),(2,'REPORT','wfaf','test@gmail.com','fwaaaaaaww','2024-06-01');
+/*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -86,7 +115,7 @@ CREATE TABLE `users` (
   `user_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +124,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'imjhirozen','$2y$10$EOCpuoLuG9iT9rxXQrTJXuKKvDPgZixhlC56kzcFvWmfkxgk5Swce','sultones5@gmail.com','2024-05-26','Ranielo lapina sultones',3365),(2,'test','$2y$10$1vxXmzGCzU7WfqqPKSLJ3OlLLCh5oyyO46tQG9lCOkii4yBliOCBW','sultones5@gmail.com','2024-04-30','Ranielo test testlast',4895);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -107,4 +137,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-26 21:45:13
+-- Dump completed on 2024-06-01 16:57:33
