@@ -22,3 +22,5 @@ $router->get('/destroy', 'Controller/session/destroy.php');
 
 $router->get('/registration', 'Controller/registration/index.php');
 $router->post('/registration', 'Controller/registration/create.php');
+
+$router->get('/mission-vision', 'Controller/mission-vision/index.php');

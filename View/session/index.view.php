@@ -34,6 +34,10 @@
             <div>
                 <a class="create-an-account-link" href="/index.php/registration">Don't have an account? Create one</a>
             </div>
+
+            <div>
+                <a href="/index.php/mission-vision" target="_blank" >Mission-Vision</a>
+            </div>
         </form>
     </section>
 </div>
