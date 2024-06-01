@@ -1,140 +1,190 @@
-CREATE DATABASE  IF NOT EXISTS `canteen` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `canteen`;
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1    Database: canteen
--- ------------------------------------------------------
--- Server version	8.0.36
+-- Host: 127.0.0.1
+-- Generation Time: Jun 01, 2024 at 04:09 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `canteen`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `product_items`
 --
 
-DROP TABLE IF EXISTS `product_items`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_items` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `product_type` varchar(45) DEFAULT NULL,
   `product_name` varchar(100) DEFAULT NULL,
-  `product_price` int DEFAULT NULL,
-  `product_image` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `product_price` int(11) DEFAULT NULL,
+  `product_image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product_items`
 --
 
-LOCK TABLES `product_items` WRITE;
-/*!40000 ALTER TABLE `product_items` DISABLE KEYS */;
-INSERT INTO `product_items` VALUES (1,'FOOD','Sandwich',40,'../View/assets/img/Sandwich.png'),(2,'FOOD','Pasta',50,'../View/assets/img/Pasta.png'),(3,'FOOD','Burger',45,'../View/assets/img/Burger.jpg'),(4,'FOOD','Salad',25,'../View/assets/img/Salad.jpg'),(5,'DRINK','Coffee',20,'../View/assets/img/Coffee.jpg'),(6,'DRINK','coke',15,'../View/assets/img/coke.jpg'),(7,'DRINK','Smoothie',25,'../View/assets/img/Smoothie.jpg'),(8,'DESSERT','Ice Cream',25,'../View/assets/img/Ice Cream.jpg'),(9,'DESSERT','Cookies',5,'../View/assets/img/Cookies.jpg'),(10,'DESSERT','Brownies',15,'../View/assets/img/Brownies.jpeg'),(11,'SNACK','Chips',20,'../View/assets/img/Chips.png');
-/*!40000 ALTER TABLE `product_items` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `product_items` (`id`, `product_type`, `product_name`, `product_price`, `product_image`) VALUES
+(1, 'FOOD', 'Burger', 50, '../View/assets/img/Burger.jpg'),
+(2, 'DRINK', 'Smoothie', 15, '../View/assets/img/Smoothie.jpg'),
+(3, 'DESSERT', 'Brownies', 5, '../View/assets/img/Brownies.jpeg'),
+(5, 'SNACK', 'Chips', 10, '../View/assets/img/Chips.png'),
+(6, 'DRINK', 'Coffee', 10, '../View/assets/img/Coffee.jpg'),
+(7, 'DRINK', 'Coke', 15, '../View/assets/img/coke.jpg'),
+(8, 'DESSERT', 'Cookies', 15, '../View/assets/img/Cookies.jpg'),
+(9, 'DESSERT', 'Ice Cream', 20, '../View/assets/img/Ice Cream.jpg'),
+(10, 'FOOD', 'Pasta', 25, '../View/assets/img/Pasta.png'),
+(11, 'FOOD', 'Salad', 25, '../View/assets/img/Salad.jpg'),
+(12, 'FOOD', 'Sandwich', 10, '../View/assets/img/Sandwich.png'),
+(13, 'FOOD', 'Spagetti', 15, '../View/assets/img/spag.jpg');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `receipts`
 --
 
-DROP TABLE IF EXISTS `receipts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `receipts` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `casher_name` varchar(100) DEFAULT NULL,
   `receipt_created` varchar(255) DEFAULT NULL,
-  `user_id` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `receipts`
 --
 
-LOCK TABLES `receipts` WRITE;
-/*!40000 ALTER TABLE `receipts` DISABLE KEYS */;
-INSERT INTO `receipts` VALUES (1,'Ranielo lapina sultones','20240526-13-56-10.pdf',3365);
-/*!40000 ALTER TABLE `receipts` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `receipts` (`id`, `casher_name`, `receipt_created`, `user_id`) VALUES
+(1, 'tesst tesst tesst', '20240601-13-32-57.pdf', 1095);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `reports`
 --
 
-DROP TABLE IF EXISTS `reports`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reports` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `type_report` varchar(50) DEFAULT NULL,
   `name` varchar(100) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `suggestion` varchar(255) DEFAULT NULL,
-  `date_created` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `date_created` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reports`
 --
 
-LOCK TABLES `reports` WRITE;
-/*!40000 ALTER TABLE `reports` DISABLE KEYS */;
-INSERT INTO `reports` VALUES (1,'SUGGESTION','ranielo','test@gmail.com','wfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwafawfafwaf','2024-06-01'),(2,'REPORT','wfaf','test@gmail.com','fwaaaaaaww','2024-06-01');
-/*!40000 ALTER TABLE `reports` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `reports` (`id`, `type_report`, `name`, `email`, `suggestion`, `date_created`) VALUES
+(4, 'REPORT', 'user1', 'user1@gmail.com', 'Report 1', '2024-06-01'),
+(5, 'REPORT', 'user1', 'user1@gmail.com', 'Report 2', '2024-06-01'),
+(6, 'REPORT', 'user1', 'user1@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '2024-06-01'),
+(7, 'SUGGESTION', 'user1', 'user1@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '2024-06-01'),
+(8, 'SUGGESTION', 'user1', 'user1@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '2024-06-01'),
+(9, 'SUGGESTION', 'user1', 'user1@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '2024-06-01'),
+(10, 'SUGGESTION', 'name4', 'user2@gmail.com', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '2024-06-01'),
+(11, 'MENU', 'name1123', 'user2@gmail.com', 'Can you add piatos?', '2024-06-01'),
+(12, 'MENU', 'name1', 'user1@gmail.com', 'Can you add Mango Pie', '2024-06-01'),
+(13, 'MENU', 'name1123', 'user1@gmail.com', 'Milktea', '2024-06-01');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `birthdate` date DEFAULT NULL,
   `full_name` varchar(100) DEFAULT NULL,
-  `user_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `user_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'imjhirozen','$2y$10$EOCpuoLuG9iT9rxXQrTJXuKKvDPgZixhlC56kzcFvWmfkxgk5Swce','sultones5@gmail.com','2024-05-26','Ranielo lapina sultones',3365),(2,'test','$2y$10$1vxXmzGCzU7WfqqPKSLJ3OlLLCh5oyyO46tQG9lCOkii4yBliOCBW','sultones5@gmail.com','2024-04-30','Ranielo test testlast',4895);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `birthdate`, `full_name`, `user_id`) VALUES
+(1, 'test', '$2y$10$Imxzt158VepB.CFiSe2t0.MCtrnnAtElNLks3G/zUlFjvghTAeOT6', 'tesst@gmail.com', '2024-06-01', 'tesst tesst tesst', 1095);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `product_items`
+--
+ALTER TABLE `product_items`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `receipts`
+--
+ALTER TABLE `receipts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username_UNIQUE` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product_items`
+--
+ALTER TABLE `product_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `receipts`
+--
+ALTER TABLE `receipts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-06-01 16:57:33
