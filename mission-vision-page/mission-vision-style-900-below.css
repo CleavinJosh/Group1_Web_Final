@@ -1,0 +1,7 @@
+@media screen and (max-width: 900px){
+  main > div > .eye-img-container,
+  main > div > .list-img-container,
+  main > div > .heart-img-container{
+    display: none;
+  }
+}
