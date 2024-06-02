@@ -26,7 +26,7 @@ try {
         'regLastname' => $_POST['lastname'],
     ]);
     
-
+    redirect('/registration');
 }
 
 redirect('/login');
